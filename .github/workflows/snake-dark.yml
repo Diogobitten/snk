@@ -2,10 +2,10 @@ name: Generate Snake (dark only)
 
 on:
   schedule:
-    - cron: "0 0 * * 1" # roda toda segunda-feira 00:00 UTC
-  workflow_dispatch:      # permite rodar manualmente
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
   push:
-    branches: ["main", "master"]  # roda quando você fizer push
+    branches: ["main", "master"]
 
 permissions:
   contents: write
@@ -19,7 +19,7 @@ jobs:
         with:
           github_user_name: diogobitten
           outputs: |
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake-dark.svg palette=github-dark
 
       - name: Publish to output branch
         uses: crazy-max/ghaction-github-pages@v4
